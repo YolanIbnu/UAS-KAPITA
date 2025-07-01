@@ -1,0 +1,138 @@
+/* Navbar */
+.top-nav {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 10px 40px;
+  font-family: 'Poppins', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  height: 55px;
+  display: flex;
+  align-items: center;
+}
+
+.top-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 35px;
+  height: 100%;
+  align-items: center;
+  overflow-x: auto;          /* Tambahan: scroll horizontal di mobile */
+  -webkit-overflow-scrolling: touch; /* smooth scroll iOS */
+}
+
+.top-nav ul::-webkit-scrollbar {
+  height: 6px;
+}
+
+.top-nav ul::-webkit-scrollbar-thumb {
+  background-color: #1a73e8aa;
+  border-radius: 3px;
+}
+
+.top-nav ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.top-nav ul li a {
+  color: #1a73e8;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;       /* agar teks tidak terpotong */
+}
+
+/* Hover dan aktif */
+.top-nav ul li a:hover,
+.top-nav ul li a.active {
+  border-bottom-color: #1a73e8;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .top-nav {
+    padding: 10px 20px;
+    height: auto;
+  }
+  /* Tetap flex row, hanya padding dan height berubah */
+  .top-nav ul {
+    gap: 20px;  /* lebih rapat di mobile */
+  }
+  .top-nav ul li a {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- About Us container ---------- */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 15px; /* padding kiri kanan untuk ruang di mobile */
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.text-section {
+  flex: 1 1 300px;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 24px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Image styling */
+.image-section {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  object-fit: cover;
+  height: auto;
+  max-height: 450px;
+}
+
+/* Responsive About Us */
+@media (max-width: 768px) {
+  .container {
+    gap: 25px;
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .image-section img {
+    max-height: 300px;
+  }
+  p {
+    font-size: 0.95rem;
+  }
+}

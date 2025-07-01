@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "BOMBA",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::32748" } },
+"features": [
+{ "type": "Feature", "properties": { "Nama Pos": "Pos Pemadam Kalibata Sektor Pancoran", "Alamat": "Jl. Pasewaran No.6, RT.12\/RW.5, Rawajati, Kec. Pancoran, Kota Jakarta Selatan, DKI Jakarta 12750, Indonesia", "Nomor Telepon": "(021) 25031974", "Latitude": -6.253587194, "Longitude": 106.8511503 }, "geometry": { "type": "Point", "coordinates": [ 704804.116960791987367, 9308402.737597262486815 ] } }
+]
+}

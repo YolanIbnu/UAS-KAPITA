@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data SMP Negeri Kabupaten Blora</title>
+    <link rel="stylesheet" href="style2.css" />
+    <style>
+        body {
+            background: #f0f4fa;
+            color: #2c3e50;
+            font-family: 'Poppins', sans-serif;
+        }
+        .title {
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+        .title h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #1a73e8;
+            text-transform: uppercase;
+        }
+        .title p {
+            font-style: italic;
+            margin-top: 6px;
+            color: #3b4a63;
+        }
+        .table-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(26,115,232,0.15);
+            overflow-x: auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+        thead tr {
+            background: #1a73e8;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        th, td {
+            padding: 14px 18px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        tbody tr:hover {
+            background-color: #e3f0fd;
+            cursor: pointer;
+        }
+        .back-btn {
+            margin: 15px auto 40px;
+            display: block;
+            text-align: center;
+        }
+        .back-btn a {
+            display: inline-block;
+            background: #1a73e8;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 40px;
+            box-shadow: 0 8px 20px rgba(26,115,232,0.4);
+            transition: all 0.3s ease;
+        }
+        .back-btn a:hover {
+            background: #155ab6;
+            box-shadow: 0 12px 30px rgba(21,90,182,0.6);
+        }
+        /* Pagination */
+        .pagination {
+            text-align: center;
+            margin: 25px 0 60px;
+            user-select: none;
+        }
+        .pagination button {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            margin: 0 6px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(26,115,232,0.35);
+            transition: background 0.3s ease;
+        }
+        .pagination button:hover:not(:disabled) {
+            background: #155ab6;
+        }
+        .pagination button:disabled {
+            background: #a3b9db;
+            cursor: default;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-btn">
+        <a href="peta.html">&larr; Kembali ke Peta</a>
+    </div>
+
+    <div class="title">
+        <h1>Data SMP Negeri Kabupaten Blora</h1>
+        <p>Informasi lengkap tentang SMP Negeri di Kabupaten Blora.</p>
+    </div>
+
+    <div class="table-container">
+        <table id="data-table" aria-label="Data SMP Negeri Kabupaten Blora">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Nama Satuan Pendidikan</th>
+                    <th>Alamat</th>
+                    <th>Kelurahan</th>
+                    <th>Status</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="pagination" id="pagination"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="datasmp.js"></script>
+</body>
+</html>
