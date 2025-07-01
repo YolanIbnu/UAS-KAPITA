@@ -115,26 +115,26 @@ function loadDisolveArea() {
 }
 
 // Fungsi load Service area (GeoJSON)
-function loadServicearea() {
-  return fetch('data/Service area.geojson')
+function loadServiceAreaLayer() {
+  return fetch('data/Service Area.geojson')
     .then(res => {
-      console.log('Service area response:', res);
+      console.log('Service Area response:', res);
+      if (!res.ok) throw new Error('Gagal fetch Service Area.geojson');
       return res.json();
     })
     .then(data => {
-      console.log('Service area data:', data);
+      console.log('Service Area data:', data);
       Servicearea = L.geoJSON(data, {
-        style: { color: 'blue', weight: 3, opacity: 1 },
-        onEachFeature: (feature, layer) => {
-          if (feature.properties && feature.properties.name) {
-            layer.bindPopup("<b>Jalan:</b> " + feature.properties.name);
-          }
+        style: { color: '#ff9800', weight: 2, fillOpacity: 0.15 },
+        onEachFeature: function (feature, layer) {
+          layer.bindPopup('Service Area Faskes');
         }
       });
       return Servicearea;
     })
     .catch(err => {
-      console.error('Error loading Service area:', err);
+      console.error('Error loading Service Area:', err);
+      return null;
     });
 }
 
@@ -286,7 +286,7 @@ Promise.all([
   loadJalanLayer(),
   loadSmpLayer(),
   loadFaskesLayer(),
-  loadServicearea(),
+  loadServiceAreaLayer(),
   loadDisolveArea(),
   loadDisolveNetwork()
 ])
